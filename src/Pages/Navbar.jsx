@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const user = useSelector((store) => store.user);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   console.log("🔍 Navbar - User state:", !!user);
@@ -15,7 +17,7 @@ const Navbar = () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
       dispatch(removeUser());
-      window.location.href = "/login";
+      navigate("/login");
     } catch (err) {
       console.error("Logout error:", err);
     }
