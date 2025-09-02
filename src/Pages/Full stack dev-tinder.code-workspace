@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "frontend",
+			"path": "../.."
+		},
+		{
+			"name": "Dev-Tinder",
+			"path": "../../../../Dev-Tinder"
+		}
+	],
+	"settings": {}
+}
